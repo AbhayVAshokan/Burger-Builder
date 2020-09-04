@@ -24,6 +24,12 @@ const buildControls = (props) => (
 				/>
 			)
 		}
+		<button
+			disabled={props.orderDisabled}
+			className={styles.orderButton}
+			onClick={() => props.checkout(true)}>
+			ORDER NOW
+		</button>
 	</div>
 )
 
