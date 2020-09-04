@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './burgerIngredient.css';
+import styles from './BurgerIngredient.css';
 
 class BurgerIngredient extends Component {
-	render(
+	render() {
 		let ingredient = null;
 
 		switch(this.props.type) {
@@ -22,24 +22,28 @@ class BurgerIngredient extends Component {
 				break;
 
 			case ('meat'):
-				<div className={styles.Meat}></div>;
+				ingredient = <div className={styles.Meat}></div>;
 				break;
 
 			case ('cheese'):
-				<div className={styles.Meat}></div>;
+				ingredient = <div className={styles.Cheese}></div>;
 				break;
 
 			case ('salad'):
-				<div className={styles.Salad}></div>;
+				ingredient = <div className={styles.Salad}></div>;
 				break;
 
 			case ('bacon'):
-				<div className={styles.Bacon}></div>;
+				ingredient = <div className={styles.Bacon}></div>;
+				break;
+
+			default:
+				ingredient = null;
 				break;
 		}
 
 		return ingredient;
-	);
+	};
 }
 
 BurgerIngredient.propTypes = {
