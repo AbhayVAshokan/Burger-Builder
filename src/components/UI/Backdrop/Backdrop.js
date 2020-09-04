@@ -6,7 +6,7 @@ const backdrop = (props) => (
 	props.show
 	? <div
 		className={styles.backdrop}
-		onClick={props.hideModal}></div>
+		onClick={props.unFocus}></div>
 	: null
 );
 

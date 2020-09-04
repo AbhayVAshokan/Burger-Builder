@@ -62,6 +62,21 @@ class BurgerBuilder extends Component {
 		})
 	}
 
+	// Funtion to place order
+	placeOrder = () => {
+		alert('Order Placed!');
+		this.setState({
+			ingredients: {
+			meat: 0,
+			salad: 0,
+			bacon: 0,
+			cheese: 0,
+			},
+			totalPrice: 4,
+			checkout: false,
+		});
+	}
+
 	render() {
 		const disabledInfo = { ...this.state.ingredients };
 		for(let key in disabledInfo)
@@ -73,7 +88,11 @@ class BurgerBuilder extends Component {
 					className='modal'
 					show={this.state.checkout}
 					checkoutOrderHandler={this.checkoutOrderHandler}>
-					<OrderSummary ingredients={this.state.ingredients}/>
+					<OrderSummary
+						totalPrice={this.state.totalPrice}
+						ingredients={this.state.ingredients}
+						cancelOrder={() => this.checkoutOrderHandler(false)}
+						placeOrder={this.placeOrder}/>
 				</Modal>
 				<Burger
 					ingredients={this.state.ingredients}/>

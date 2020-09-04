@@ -14,7 +14,7 @@ const modal = (props) => {
 		<Aux>
 			<Backdrop
 				show={props.show}
-				hideModal={() => props.checkoutOrderHandler(false)}/>
+				unFocus={() => props.checkoutOrderHandler(false)}/>
 			<div
 				className={styles.modal}
 				style={modalStyle}>
